@@ -29,4 +29,11 @@ window.onload = () => {
     // 作成したimg要素をHTMLに追加
     photo.appendChild(img);
   }
+
+  // タイトルの表示
+  title.innerHTML = `[1] ${photoList[0].title}`;
+
+  // 画像の表示
+  let imgs = photo.getElementsByTagName('img');
+  imgs[0].style.display = 'inline';
 }
