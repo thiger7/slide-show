@@ -12,4 +12,20 @@ window.onload = () => {
   let photo = document.getElementById('photo');
   let nextBtn = document.getElementById('nextBtn');
   let title = document.getElementById('title');
+
+  // img要素をHTMLに追加
+  let item, img;
+  for (let i = 0; i < photoLength; i++) {
+    item = photoList[i];
+
+    // img要素の作成
+    img = document.createElement('img');
+
+    // 作成したimg要素に属性を設定
+    img.src = item.src;
+    img.alt = item.title;
+
+    // 作成したimg要素をHTMLに追加
+    photo.appendChild(img);
+  }
 }
