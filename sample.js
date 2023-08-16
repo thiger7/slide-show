@@ -24,6 +24,7 @@ window.onload = () => {
     // 作成したimg要素に属性を設定
     img.src = item.src;
     img.alt = item.title;
+    img.style.display = 'none';
 
     // 作成したimg要素をHTMLに追加
     photo.appendChild(img);
