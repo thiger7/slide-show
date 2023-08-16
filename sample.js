@@ -36,4 +36,9 @@ window.onload = () => {
   // 画像の表示
   let imgs = photo.getElementsByTagName('img');
   imgs[0].style.display = 'inline';
+
+  // nextボタンを押したときの処理
+  nextBtn.onclick = () => {
+    console.log('clicked');
+  }
 }
