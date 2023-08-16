@@ -43,6 +43,9 @@ window.onload = () => {
 
     // 作成したimg要素をHTMLに追加
     photo.appendChild(img);
+
+    // img要素をキャッシュする
+    item.elem = img;
   }
 
   // タイトルの表示
