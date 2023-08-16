@@ -50,12 +50,18 @@ window.onload = () => {
     // 表示する画像のインデックスを計算
     currentIndex++;
 
+    // すべての画像を非表示
+    let imgs = photo.getElementsByTagName('img');
+    let imgLength = imgs.length;
+    for (let i = 0; i < imgLength; i++) {
+      imgs[i].style.display = 'none';
+    }
+
     // タイトルの表示
     let viewNumber = currentIndex + 1;
     title.innerHTML = `[${viewNumber}] ${photoList[currentIndex].title}`;
 
     // 画像の表示
-    let imgs = photo.getElementsByTagName('img');
     imgs[currentIndex].style.display = 'inline';
   }
 }
