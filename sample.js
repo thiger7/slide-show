@@ -1,4 +1,20 @@
 window.onload = () => {
+  // 指定の画像に表示を切り替える関数
+  const showPhoto = (index) => {
+    // すべての画像を非表示
+    let imgs = photo.getElementsByTagName('img');
+    let imgLength = imgs.length;
+    for (let i = 0; i < imgLength; i++) {
+      imgs[i].style.display = 'none';
+    }
+    // タイトルの表示
+    let viewNumber = index + 1;
+    title.innerHTML = `[${viewNumber}] ${photoList[index].title}`;
+
+    // 画像の表示
+    imgs[index].style.display = 'inline';
+  }
+
   // 画像のリストの定義
   let photoList = [
     { src: 'img/spring.jpeg', title: '春の桜' },
@@ -24,7 +40,6 @@ window.onload = () => {
     // 作成したimg要素に属性を設定
     img.src = item.src;
     img.alt = item.title;
-    img.style.display = 'none';
 
     // 作成したimg要素をHTMLに追加
     photo.appendChild(img);
@@ -53,18 +68,7 @@ window.onload = () => {
       currentIndex = 0;
     }
 
-    // すべての画像を非表示
-    let imgs = photo.getElementsByTagName('img');
-    let imgLength = imgs.length;
-    for (let i = 0; i < imgLength; i++) {
-      imgs[i].style.display = 'none';
-    }
-
-    // タイトルの表示
-    let viewNumber = currentIndex + 1;
-    title.innerHTML = `[${viewNumber}] ${photoList[currentIndex].title}`;
-
-    // 画像の表示
-    imgs[currentIndex].style.display = 'inline';
+    // 画像の切り替え
+    showPhoto(currentIndex);
   }
 }
