@@ -49,6 +49,9 @@ window.onload = () => {
   nextBtn.onclick = () => {
     // 表示する画像のインデックスを計算
     currentIndex++;
+    if (currentIndex === photoLength) {
+      currentIndex = 0;
+    }
 
     // すべての画像を非表示
     let imgs = photo.getElementsByTagName('img');
