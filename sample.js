@@ -41,4 +41,21 @@ window.onload = () => {
   nextBtn.onclick = () => {
     console.log('clicked');
   }
+
+  // 現在のインデックスを保存するための変数
+  let currentIndex = 0;
+
+  // nextボタンを押したときの処理
+  nextBtn.onclick = () => {
+    // 表示する画像のインデックスを計算
+    currentIndex++;
+
+    // タイトルの表示
+    let viewNumber = currentIndex + 1;
+    title.innerHTML = `[${viewNumber}] ${photoList[currentIndex].title}`;
+
+    // 画像の表示
+    let imgs = photo.getElementsByTagName('img');
+    imgs[currentIndex].style.display = 'inline';
+  }
 }
